@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\ScheduleController;
 use App\Http\Controllers\API\SchoolClassController;
 use App\Http\Controllers\API\StudentController;
 use Illuminate\Http\Request;
@@ -24,4 +25,7 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::get('/classes', [SchoolClassController::class, 'index']);
 
     Route::get('/students', [StudentController::class, 'index']);
+
+    Route::post('/schedules', [ScheduleController::class, 'store'])
+        ->middleware('can:is_guru');
 });
