@@ -1,0 +1,41 @@
+[33mcommit 0809f5b71f3a195be9ccd2469481ae3b71f3b303[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: lino089 <marvellino089@gmail.com>
+Date:   Sun Aug 16 22:04:20 2026 +0700
+
+    Menambahkan fitur global lock
+
+[33mcommit 1804f6635fc2e6e6826008863557f5b769d568d1[m
+Author: lino089 <marvellino089@gmail.com>
+Date:   Sun Aug 16 21:34:01 2026 +0700
+
+    Add students Endpoint
+
+[33mcommit 3053aa60fd78eeeeff0ecd7ec4eb83878a430b11[m
+Author: lino089 <marvellino089@gmail.com>
+Date:   Sun Aug 16 19:20:11 2026 +0700
+
+    Add classes endpoint
+
+[33mcommit 6953d03834ac2333b101b6a3251861628701cd56[m
+Author: lino089 <marvellino089@gmail.com>
+Date:   Sun Aug 16 11:56:26 2026 +0700
+
+    Menambahkan Authorization untuk role is_waka
+
+[33mcommit 46d728911ef97092dcde8789f401909a6415c314[m
+Author: lino089 <marvellino089@gmail.com>
+Date:   Sun Aug 16 11:24:13 2026 +0700
+
+    Add feature logout
+
+[33mcommit ba58e3eb5933ad028ddfc993cd4fae8d4ef39000[m
+Author: lino089 <marvellino089@gmail.com>
+Date:   Tue Aug 11 00:18:40 2026 +0700
+
+    Menambah Endpoit api/me
+
+[33mcommit 83a0ea074c73aedc1ae4a0fe8335e0e19bf8957c[m
+Author: lino089 <marvellino089@gmail.com>
+Date:   Mon Aug 10 08:00:30 2026 +0700
+
+    SCP Project

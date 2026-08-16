@@ -11,7 +11,7 @@ class ScheduleController extends Controller
     public function store(Request $request){
         $config = SystemConfiguration::first();
 
-        if($config && $config->is_schedule_locked === 1){
+        if($config && $config->is_schedule_locked === true){
             return response()->json([
                 'success' => false,
                 'message' => 'Akses ditolak. Jadwal sedang dikunci oleh waka kurikulum.'

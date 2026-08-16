@@ -22,13 +22,21 @@ class UserSeeder extends Seeder
         //     'password' => Hash::make('admin123')
         // ]);
 
+        // User::create([
+        //     'name' => 'siswa aja',
+        //     'username' => 'siswa01',
+        //     'email' => 'siswa@skansaba.sch.id',
+        //     'role_id' => 4,
+        //     'class_id' => 1,
+        //     'password' => Hash::make('siswa123')
+        // ]);
+
         User::create([
-            'name' => 'siswa aja',
-            'username' => 'siswa01',
-            'email' => 'siswa@skansaba.sch.id',
-            'role_id' => 4,
-            'class_id' => 1,
-            'password' => Hash::make('siswa123')
+            'name' => 'guru1',
+            'username' => 'guru01',
+            'email' => 'guru@skansaba.sch.id',
+            'role_id' => 2,
+            'password' => Hash::make('guru123')
         ]);
     }
 }
