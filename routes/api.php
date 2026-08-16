@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\SchoolClassController;
+use App\Http\Controllers\API\StudentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AcademicSettingController;
@@ -21,4 +22,6 @@ Route::middleware('auth:sanctum')->group(function() {
         ->middleware('can:is_waka');
 
     Route::get('/classes', [SchoolClassController::class, 'index']);
+
+    Route::get('/students', [StudentController::class, 'index']);
 });
