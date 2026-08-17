@@ -28,4 +28,6 @@ Route::middleware('auth:sanctum')->group(function() {
 
     Route::post('/schedules', [ScheduleController::class, 'store'])
         ->middleware('can:is_guru');
+
+    Route::get('/schedules', [ScheduleController::class, 'index']);
 });
