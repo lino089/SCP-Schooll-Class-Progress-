@@ -80,7 +80,7 @@ class ScheduleController extends Controller
     public function index(Request $request){
         $user = $request->user();
 
-        $query = Schedule::query();
+        $query = Schedule::with(['schoolClass', 'room', 'teacher']);
 
         if($user->role_id === 2){
             $query->where('teacher_id', $user->id);

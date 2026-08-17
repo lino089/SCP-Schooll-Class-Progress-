@@ -15,4 +15,16 @@ class Schedule extends Model
         'end_time', 
         'cycle_type'
     ];
+
+    public function schoolClass(){
+        return $this->belongsTo(SchoolClass::class, 'class_id');
+    }
+
+    public function room(){
+        return $this->belongsTo(Room::class, 'room_id');
+    }
+
+    public function teacher(){
+        return $this->belongsTo(User::class, 'teacher_id');
+    }
 }
