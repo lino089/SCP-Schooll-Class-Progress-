@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\API\AiQuizController;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\APi\JournalController;
 use App\Http\Controllers\API\LeaveRequestController;
+use App\Http\Controllers\API\QuizSubmissionController;
 use App\Http\Controllers\API\ScheduleController;
 use App\Http\Controllers\API\SchoolClassController;
 use App\Http\Controllers\API\StudentController;
+use App\Models\QuizSubmission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AcademicSettingController;
@@ -40,4 +43,8 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::patch('/leave-requests/{id}/status', [LeaveRequestController::class, 'updateStatus']);
 
     Route::get('/leave-requests', [LeaveRequestController::class, 'index']);
+
+    Route::post('/quizzes', [AiQuizController::class, 'store']);
+
+    Route::post('/quiz-submissions', [QuizSubmissionController::class, 'store']);
 });

@@ -10,6 +10,6 @@ class QuizSubmission extends Model
         'quiz_id',
         'student_id',
         'score',
-        'students_answers_data'
+        'student_answers_data'
     ];
 }

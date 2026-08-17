@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('quiz_id')->constrained('ai_quizzes');
             $table->foreignId('student_id')->constrained('users');
             $table->integer('score');
-            $table->json('students_answers_data');
+            $table->json('student_answers_data');
             $table->timestamps();
         });
     }
