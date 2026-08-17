@@ -14,22 +14,22 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::create([
-        //     'name' => 'Pak WAKA',
-        //     'username' => 'waka_kurikulum',
-        //     'email'=> 'waka@skansaba.sch.id',
-        //     'role_id' => 1,
-        //     'password' => Hash::make('admin123')
-        // ]);
+        User::create([
+            'name' => 'Pak WAKA',
+            'username' => 'waka_kurikulum',
+            'email'=> 'waka@skansaba.sch.id',
+            'role_id' => 1,
+            'password' => Hash::make('admin123')
+        ]);
 
-        // User::create([
-        //     'name' => 'siswa aja',
-        //     'username' => 'siswa01',
-        //     'email' => 'siswa@skansaba.sch.id',
-        //     'role_id' => 4,
-        //     'class_id' => 1,
-        //     'password' => Hash::make('siswa123')
-        // ]);
+        User::create([
+            'name' => 'siswa aja',
+            'username' => 'siswa01',
+            'email' => 'siswa@skansaba.sch.id',
+            'role_id' => 4,
+            'class_id' => 1,
+            'password' => Hash::make('siswa123')
+        ]);
 
         User::create([
             'name' => 'guru1',

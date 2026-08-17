@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\APi\JournalController;
 use App\Http\Controllers\API\ScheduleController;
 use App\Http\Controllers\API\SchoolClassController;
 use App\Http\Controllers\API\StudentController;
@@ -30,4 +31,6 @@ Route::middleware('auth:sanctum')->group(function() {
         ->middleware('can:is_guru');
 
     Route::get('/schedules', [ScheduleController::class, 'index']);
+
+    Route::post('/journals', [JournalController::class, 'store']);
 });
