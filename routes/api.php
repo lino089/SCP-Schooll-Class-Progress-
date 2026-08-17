@@ -35,5 +35,7 @@ Route::middleware('auth:sanctum')->group(function() {
 
     Route::post('/journals', [JournalController::class, 'store']);
 
-    Route::post('/leave-request', [LeaveRequestController::class, 'store']);
+    Route::post('/leave-requests', [LeaveRequestController::class, 'store']);
+
+    Route::patch('/leave-requests/{id}/status', [LeaveRequestController::class, 'updateStatus']);
 });

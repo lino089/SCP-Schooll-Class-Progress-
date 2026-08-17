@@ -40,4 +40,44 @@ class LeaveRequestController extends Controller
             'data' => $leaveRequest 
         ], 201);
     }
+
+    public function updateStatus(Request $requests, $id){
+        if ($requests->user()->role_id === 3){
+            return response()->json([
+                'success' => false,
+                'message' => 'Siswa dilarang mengakses fitur ini',
+            ], 403);
+        }
+
+        $leaveRequest = LeaveRequest::find($id);
+        if (!$leaveRequest){
+            return response()->json([
+                'success' => false,
+                'message' => 'Data tidak ditemukan'
+            ], 404);
+        }
+
+        $validator = Validator::make($requests->all(), [
+            'status' => 'required|in:approved,rejected',
+            'rejection_reason' => 'required_if:status,rejected|string|nullable'
+        ]);
+
+        if($validator->fails()){
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->errors()
+            ], 422);
+        }
+
+        $leaveRequest->update([
+            'status' => $requests->status,
+            'rejection_reason' => $requests->status === 'rejected' ? $requests->rejection_reason : null
+        ]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Status pengajuan izin berhasil diperbarui',
+            'data' => $leaveRequest
+        ], 200);
+    }
 }
