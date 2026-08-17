@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\APi\JournalController;
+use App\Http\Controllers\API\LeaveRequestController;
 use App\Http\Controllers\API\ScheduleController;
 use App\Http\Controllers\API\SchoolClassController;
 use App\Http\Controllers\API\StudentController;
@@ -33,4 +34,6 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::get('/schedules', [ScheduleController::class, 'index']);
 
     Route::post('/journals', [JournalController::class, 'store']);
+
+    Route::post('/leave-request', [LeaveRequestController::class, 'store']);
 });
