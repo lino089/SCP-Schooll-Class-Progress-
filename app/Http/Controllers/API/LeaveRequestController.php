@@ -80,4 +80,20 @@ class LeaveRequestController extends Controller
             'data' => $leaveRequest
         ], 200);
     }
+
+    public function index(Request $request){
+        $query = LeaveRequest::with('student');
+
+        if($request->user()->role_id === 3){
+            $query->where('student_id'->$request->user()->id);
+        }
+
+        $leaveRequests = $query->get();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Daftar pengajuan izin berhasil diambil.',
+            'data' => $leaveRequests
+        ], 200);
+    }
 }

@@ -15,4 +15,8 @@ class LeaveRequest extends Model
         'status',
         'rejection_reason'
     ];
+
+    public function student(){
+        return $this->belongsTo(User::class, 'student_id');
+    }
 }
