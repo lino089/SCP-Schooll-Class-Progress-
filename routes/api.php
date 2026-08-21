@@ -27,6 +27,9 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::get('/academic-settings', [AcademicSettingController::class, 'index'])
         ->middleware('can:is_waka');
 
+    Route::post('/academic-settings', [AcademicSettingController::class, 'update'])
+        ->middleware('can:is_waka');
+
     Route::get('/classes', [SchoolClassController::class, 'index']);
 
     Route::get('/students', [StudentController::class, 'index']);
