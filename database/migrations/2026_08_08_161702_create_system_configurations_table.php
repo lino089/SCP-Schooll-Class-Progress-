@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('system_configurations', function (Blueprint $table) {
             $table->id();
-            $table->integer('active_cycle')->default(1);
+            $table->enum('active_cycle', ['1', '2'])->default(1);
             $table->boolean('is_schedule_locked')->default(false);
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
         });
     }

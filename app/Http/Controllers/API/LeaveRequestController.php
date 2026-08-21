@@ -42,10 +42,10 @@ class LeaveRequestController extends Controller
     }
 
     public function updateStatus(Request $requests, $id){
-        if ($requests->user()->role_id === 3){
+        if (!in_array($requests->user()->role_id, [1, 4])){
             return response()->json([
                 'success' => false,
-                'message' => 'Siswa dilarang mengakses fitur ini',
+                'message' => 'Anda tidak memiliki otoritas untuk memverifikasi izin',
             ], 403);
         }
 
